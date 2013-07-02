@@ -5,9 +5,9 @@ from django.template import Context
 import django.template.loader
 
 sys.path.append(os.getcwd())
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shoot.django_settings")
 
 config = {}
-
 
 try:
     import shootconfig
