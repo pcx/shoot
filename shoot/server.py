@@ -1,13 +1,22 @@
 import os
+import io
 import posixpath
 import http.server
+from django.template import Template
 
-from shoot.util import gen_response_stream
+from shoot import config
 
 
 class ShootServer(http.server.SimpleHTTPRequestHandler):
     """Handler to deal with incoming requests.
     """
+
+    def gen_response_stream(self, f):
+        template = Template(f.read())
+        content = template.render(config.get('context'))
+        content_in_bytes = bytes(content, 'UTF-8')
+        stream = io.BytesIO(content_in_bytes)
+        return (stream, len(content_in_bytes))
 
     def send_head(self):
         """Builds response headers and in process renders templates, if any.
@@ -39,7 +48,7 @@ class ShootServer(http.server.SimpleHTTPRequestHandler):
             return None
         file_ext = posixpath.splitext(path)[1]
         if file_ext == '.html':
-            stream, length = gen_response_stream(f)
+            stream, length = self.gen_response_stream(f)
         self.send_response(200)
         self.send_header("Content-type", ctype)
         self.send_header("Content-Length", str(length))
