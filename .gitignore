@@ -3,3 +3,5 @@
 .*#
 *.pyc
 .env
+Shoot.egg-info/
+dist/
