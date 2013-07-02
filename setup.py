@@ -2,7 +2,7 @@ import setuptools
 
 
 setuptools.setup(name='Shoot',
-                 version='0.1dev',
+                 version='0.0.1',
                  author='Phaneendra Chiruvella',
                  author_email='hi@pcx.io',
                  packages=['shoot',],
