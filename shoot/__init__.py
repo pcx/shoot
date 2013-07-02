@@ -1,6 +1,10 @@
+import os
+import sys
+
 from django.template import Context
 import django.template.loader
 
+sys.path.append(os.getcwd())
 
 config = {}
 
