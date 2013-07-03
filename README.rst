@@ -12,14 +12,15 @@ without needing to setup a complete Django project, *Shoot* does that for you.
 
 *Shoot* is a minimal web server which maps *.html files to URIs, i.e.
 server_root/path/to.file.html is served at http://host:port/path/to/file.
+
 HTML files are mapped to URIs and rendered as Django templates. You can use
-all the usual Django template goodness, i.e. extending, including other templates,
+all the usual Django template goodness, i.e. extending & including other templates,
 template tags like *{% static %}* etc.
 
-It is like developing with PHP, but using Django templates. You can later drop these
-templates directly into your Django project.
+It is like developing with PHP. You can later drop these templates directly into
+your Django project.
 
-*Shoot* is known to work with Python 3.2.3 and Django 1.5.
+*Shoot* is known to work with Python 3.2 and Django 1.5.
 
 Stuff *Shoot* does for you:
 
@@ -32,9 +33,9 @@ Stuff *Shoot* does for you:
 Installation
 ------------
 
-You will need Pip with Python3.
+On Ubuntu:
 
-On Ubuntu::
+You will need Pip with Python3::
 
     $ sudo apt-get install python3-setuptools
     $ sudo pip3 install shoot
@@ -50,7 +51,7 @@ Using git::
 Usage
 -----
 
-Run '*shoot*' in the directory you wnat to serve.
+Run '*shoot*' in the directory you want to serve from.
 
 
 Custom Config
@@ -72,7 +73,7 @@ This file *must* contain the following variables::
     DEBUG = True
     TEMPLATE_DEBUG = True
     SECRET_KEY = "not-so-secret"
-    # helps for *shoot* to find templates
+    # helps *shoot* find templates
     TEMPLATE_DIRS = (os.getcwd(),)
     # adds support for '*static*' template tag
     STATIC_URL = "/static/"
