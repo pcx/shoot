@@ -11,7 +11,7 @@ If you want to start prototyping your web app using Django templates,
 without needing to setup a complete Django project, *Shoot* does that for you.
 
 *Shoot* is a minimal web server which maps *.html files to URLs, i.e.
-server_root/path/to.file.html is served at http://host:port/path/to/file.
+server_root/path/to/file.html is served at http://host:port/path/to/file.
 
 HTML files are mapped to URLs and rendered as Django templates. You can use
 all the usual Django template goodness, i.e. extending & including other templates,
@@ -24,9 +24,9 @@ your Django project.
 
 Stuff *Shoot* does for you:
 
-- Map .html files to URLs and renders them while serving
-- List dirs and serve static files like any good web server would do
-- Let you pass custom context while rendering templates
+- Maps .html files to URLs and renders them while serving
+- Lists dirs and serve static files like any good web server would do
+- Lets you pass custom context while rendering templates
 - Lets you pass custom Django settings module
 
 
